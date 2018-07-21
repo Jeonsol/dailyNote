@@ -7,16 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7114D1B8C64AE19C82B3BD99 /* Pods_DailyNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8870E156EEDD1E387624B66 /* Pods_DailyNote.framework */; };
 		C837364F20FD989A0064D652 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C837364E20FD989A0064D652 /* AppDelegate.swift */; };
 		C837365120FD989A0064D652 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C837365020FD989A0064D652 /* ViewController.swift */; };
-		C837365420FD989A0064D652 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C837365220FD989A0064D652 /* Main.storyboard */; };
 		C837365720FD989A0064D652 /* DailyNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C837365520FD989A0064D652 /* DailyNote.xcdatamodeld */; };
 		C837365920FD989B0064D652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C837365820FD989B0064D652 /* Assets.xcassets */; };
-		C837365C20FD989B0064D652 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C837365A20FD989B0064D652 /* LaunchScreen.storyboard */; };
+		C870542D2103258000B5E8E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C837365220FD989A0064D652 /* Main.storyboard */; };
+		C870542E2103258000B5E8E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C837365A20FD989B0064D652 /* LaunchScreen.storyboard */; };
+		C8705456210388F100B5E8E4 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8705455210388F100B5E8E4 /* CalendarViewController.swift */; };
 		C8DCA10C2102E65A00FA8021 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DCA10B2102E65A00FA8021 /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		96E07F1A436DCFE50A2E17AA /* Pods-DailyNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyNote.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyNote/Pods-DailyNote.release.xcconfig"; sourceTree = "<group>"; };
 		C837364B20FD989A0064D652 /* DailyNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C837364E20FD989A0064D652 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C837365020FD989A0064D652 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -25,9 +28,12 @@
 		C837365820FD989B0064D652 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C837365B20FD989B0064D652 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C837365D20FD989B0064D652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8705455210388F100B5E8E4 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		C8DCA1092102E65900FA8021 /* DailyNote-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DailyNote-Bridging-Header.h"; sourceTree = "<group>"; };
 		C8DCA10A2102E65A00FA8021 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		C8DCA10B2102E65A00FA8021 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		D8870E156EEDD1E387624B66 /* Pods_DailyNote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyNote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EECEBFF820A9645EE3BA77B1 /* Pods-DailyNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyNote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyNote/Pods-DailyNote.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7114D1B8C64AE19C82B3BD99 /* Pods_DailyNote.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05BDA2CAA5A43E382E4021CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8870E156EEDD1E387624B66 /* Pods_DailyNote.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2BD4B1E7A3F7070DF81C8D8E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EECEBFF820A9645EE3BA77B1 /* Pods-DailyNote.debug.xcconfig */,
+				96E07F1A436DCFE50A2E17AA /* Pods-DailyNote.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C837364220FD98990064D652 = {
 			isa = PBXGroup;
 			children = (
 				C837364D20FD989A0064D652 /* DailyNote */,
 				C837364C20FD989A0064D652 /* Products */,
+				2BD4B1E7A3F7070DF81C8D8E /* Pods */,
+				05BDA2CAA5A43E382E4021CE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +94,7 @@
 				C837365A20FD989B0064D652 /* LaunchScreen.storyboard */,
 				C837365D20FD989B0064D652 /* Info.plist */,
 				C837365520FD989A0064D652 /* DailyNote.xcdatamodeld */,
+				C8705455210388F100B5E8E4 /* CalendarViewController.swift */,
 			);
 			path = DailyNote;
 			sourceTree = "<group>";
@@ -89,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C837366020FD989B0064D652 /* Build configuration list for PBXNativeTarget "DailyNote" */;
 			buildPhases = (
+				901593C7B545CE0C9C2BDE9A /* [CP] Check Pods Manifest.lock */,
 				C837364720FD989A0064D652 /* Sources */,
 				C837364820FD989A0064D652 /* Frameworks */,
 				C837364920FD989A0064D652 /* Resources */,
+				DB1D9DD2DD23D23A73BD6AE6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,19 +170,59 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C837365C20FD989B0064D652 /* LaunchScreen.storyboard in Resources */,
+				C870542D2103258000B5E8E4 /* Main.storyboard in Resources */,
+				C870542E2103258000B5E8E4 /* LaunchScreen.storyboard in Resources */,
 				C837365920FD989B0064D652 /* Assets.xcassets in Resources */,
-				C837365420FD989A0064D652 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		901593C7B545CE0C9C2BDE9A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DailyNote-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB1D9DD2DD23D23A73BD6AE6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DailyNote/Pods-DailyNote-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CVCalendar.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DailyNote/Pods-DailyNote-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C837364720FD989A0064D652 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8705456210388F100B5E8E4 /* CalendarViewController.swift in Sources */,
 				C837365720FD989A0064D652 /* DailyNote.xcdatamodeld in Sources */,
 				C837365120FD989A0064D652 /* ViewController.swift in Sources */,
 				C837364F20FD989A0064D652 /* AppDelegate.swift in Sources */,
@@ -299,6 +368,7 @@
 		};
 		C837366120FD989B0064D652 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EECEBFF820A9645EE3BA77B1 /* Pods-DailyNote.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -321,6 +391,7 @@
 		};
 		C837366220FD989B0064D652 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96E07F1A436DCFE50A2E17AA /* Pods-DailyNote.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
