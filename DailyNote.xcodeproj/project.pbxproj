@@ -13,6 +13,7 @@
 		C837365720FD989A0064D652 /* DailyNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C837365520FD989A0064D652 /* DailyNote.xcdatamodeld */; };
 		C837365920FD989B0064D652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C837365820FD989B0064D652 /* Assets.xcassets */; };
 		C837365C20FD989B0064D652 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C837365A20FD989B0064D652 /* LaunchScreen.storyboard */; };
+		C8DCA10C2102E65A00FA8021 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DCA10B2102E65A00FA8021 /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		C837365820FD989B0064D652 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C837365B20FD989B0064D652 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C837365D20FD989B0064D652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8DCA1092102E65900FA8021 /* DailyNote-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DailyNote-Bridging-Header.h"; sourceTree = "<group>"; };
+		C8DCA10A2102E65A00FA8021 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		C8DCA10B2102E65A00FA8021 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		C837364D20FD989A0064D652 /* DailyNote */ = {
 			isa = PBXGroup;
 			children = (
+				C8DCA1082102E63500FA8021 /* SWRevealViewController */,
 				C837364E20FD989A0064D652 /* AppDelegate.swift */,
 				C837365020FD989A0064D652 /* ViewController.swift */,
 				C837365220FD989A0064D652 /* Main.storyboard */,
@@ -65,6 +70,16 @@
 				C837365520FD989A0064D652 /* DailyNote.xcdatamodeld */,
 			);
 			path = DailyNote;
+			sourceTree = "<group>";
+		};
+		C8DCA1082102E63500FA8021 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C8DCA10A2102E65A00FA8021 /* SWRevealViewController.h */,
+				C8DCA10B2102E65A00FA8021 /* SWRevealViewController.m */,
+				C8DCA1092102E65900FA8021 /* DailyNote-Bridging-Header.h */,
+			);
+			path = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +114,7 @@
 				TargetAttributes = {
 					C837364A20FD989A0064D652 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -141,6 +157,7 @@
 				C837365720FD989A0064D652 /* DailyNote.xcdatamodeld in Sources */,
 				C837365120FD989A0064D652 /* ViewController.swift in Sources */,
 				C837364F20FD989A0064D652 /* AppDelegate.swift in Sources */,
+				C8DCA10C2102E65A00FA8021 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +301,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CWSQ59J724;
 				INFOPLIST_FILE = DailyNote/Info.plist;
@@ -294,6 +312,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sol.DailyNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DailyNote/SWRevealViewController/DailyNote-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -303,6 +323,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CWSQ59J724;
 				INFOPLIST_FILE = DailyNote/Info.plist;
@@ -313,6 +334,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sol.DailyNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DailyNote/SWRevealViewController/DailyNote-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
