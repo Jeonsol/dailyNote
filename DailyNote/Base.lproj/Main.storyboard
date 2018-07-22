@@ -20,6 +20,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9q-Fd-Zmq">
                                 <rect key="frame" x="20" y="84" width="30" height="22"/>
                                 <state key="normal" image="three_dot_gray_16x16"/>
+                                <connections>
+                                    <segue destination="Clj-Ad-5Ro" kind="show" id="zzn-mH-Mq8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4oB-5C-rx0">
                                 <rect key="frame" x="241" y="134" width="74" height="0.0"/>
@@ -146,6 +149,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wws-Sr-rb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-124" y="1058"/>
+        </scene>
+        <!--Calendar View Controller-->
+        <scene sceneID="UzQ-kl-iIg">
+            <objects>
+                <viewController storyboardIdentifier="calendarViewController" id="Clj-Ad-5Ro" customClass="CalendarViewController" customModule="DailyNote" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ase-52-IYE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3CY-1J-H1g" customClass="CVCalendarMenuView" customModule="CVCalendar">
+                                <rect key="frame" x="0.0" y="132" width="375" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ZFI-m4-uy6"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PNu-62-VZE" customClass="CVCalendarView" customModule="CVCalendar">
+                                <rect key="frame" x="0.0" y="172" width="375" height="300"/>
+                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="nAC-ge-YCy"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3CY-1J-H1g" firstAttribute="top" secondItem="jgE-BQ-C9q" secondAttribute="top" constant="68" id="Luc-Tt-zT0"/>
+                            <constraint firstItem="PNu-62-VZE" firstAttribute="leading" secondItem="jgE-BQ-C9q" secondAttribute="leading" id="PhD-n6-N2y"/>
+                            <constraint firstItem="3CY-1J-H1g" firstAttribute="leading" secondItem="jgE-BQ-C9q" secondAttribute="leading" id="RSS-Sz-Kqq"/>
+                            <constraint firstItem="PNu-62-VZE" firstAttribute="top" secondItem="3CY-1J-H1g" secondAttribute="bottom" constant="10" id="dx6-jH-I3h"/>
+                            <constraint firstItem="jgE-BQ-C9q" firstAttribute="trailing" secondItem="PNu-62-VZE" secondAttribute="trailing" id="gLr-LO-XEF"/>
+                            <constraint firstItem="3CY-1J-H1g" firstAttribute="trailing" secondItem="jgE-BQ-C9q" secondAttribute="trailing" id="jZJ-Tc-1Fd"/>
+                            <constraint firstItem="3CY-1J-H1g" firstAttribute="width" secondItem="Ase-52-IYE" secondAttribute="width" id="nss-FV-nBr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jgE-BQ-C9q"/>
+                    </view>
+                    <connections>
+                        <outlet property="calendarView" destination="PNu-62-VZE" id="JnS-Wg-GeC"/>
+                        <outlet property="menuView" destination="3CY-1J-H1g" id="aC7-dV-3VT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h5s-pO-0zj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1213.5999999999999" y="923.38830584707648"/>
         </scene>
     </scenes>
     <resources>
