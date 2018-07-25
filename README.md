@@ -9,3 +9,5 @@ CVCalendar : https://github.com/CVCalendar/CVCalendar
 디자인변경 : https://github.com/CVCalendar/CVCalendar/issues/452
 이슈와 데모 참고하기
 
+# ScrollView
+scrollview안에 uiview 가 있어야됨. 

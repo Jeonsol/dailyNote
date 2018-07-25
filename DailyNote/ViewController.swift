@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var calendarWrap: UIView!
     @IBOutlet weak var menuView: CVCalendarMenuView!
     @IBOutlet weak var calendarView: CVCalendarView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     private var shouldShowDaysOut = true
     private var calendarToggle = true
@@ -62,6 +63,7 @@ class ViewController: UIViewController {
             }
         }
         self.calendarToggle = !calendarToggle
+        scrollView.isScrollEnabled = !calendarToggle
     }
     
 }
