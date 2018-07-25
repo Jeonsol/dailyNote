@@ -5,11 +5,12 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Diary Note-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DailyNote" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,72 +18,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9q-Fd-Zmq">
-                                <rect key="frame" x="20" y="84" width="30" height="22"/>
-                                <state key="normal" image="three_dot_gray_16x16"/>
-                                <connections>
-                                    <segue destination="Clj-Ad-5Ro" kind="show" id="zzn-mH-Mq8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4oB-5C-rx0">
-                                <rect key="frame" x="241" y="134" width="74" height="0.0"/>
-                                <state key="normal" title="2018.07.17.">
-                                    <color key="titleColor" red="0.60392156862745094" green="0.60392156862745094" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                            </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8hX-Hi-2pB">
-                                <rect key="frame" x="20" y="154" width="335" height="493"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sPy-oa-FOd">
+                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gd4-rh-sD2" userLabel="Calendar">
+                                <rect key="frame" x="0.0" y="122" width="375" height="334"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="J84-u2-FbE">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="493"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CHc-hM-T0F">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="99.5"/>
-                                                <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="d3A-Pa-6tW">
-                                                <rect key="frame" x="0.0" y="119.5" width="335" height="373.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXk-J3-qSP" customClass="CVCalendarMenuView" customModule="CVCalendar">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="d3A-Pa-6tW" secondAttribute="bottom" id="itF-sv-GH3"/>
+                                            <constraint firstAttribute="height" constant="30" id="pTg-Yc-dR2"/>
                                         </constraints>
-                                    </stackView>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ibq-y0-5Oj" customClass="CVCalendarView" customModule="CVCalendar">
+                                        <rect key="frame" x="0.0" y="40" width="375" height="304"/>
+                                    </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="J84-u2-FbE" secondAttribute="bottom" id="5ni-E2-TUF"/>
-                                    <constraint firstItem="J84-u2-FbE" firstAttribute="top" secondItem="8hX-Hi-2pB" secondAttribute="top" id="Lul-1O-nSr"/>
-                                    <constraint firstItem="J84-u2-FbE" firstAttribute="height" secondItem="8hX-Hi-2pB" secondAttribute="height" id="PDe-Ub-aZ6"/>
-                                    <constraint firstAttribute="trailing" secondItem="J84-u2-FbE" secondAttribute="trailing" id="R46-8b-4Vp"/>
-                                    <constraint firstItem="J84-u2-FbE" firstAttribute="centerX" secondItem="8hX-Hi-2pB" secondAttribute="centerX" id="Zmw-bD-3U2"/>
-                                    <constraint firstItem="J84-u2-FbE" firstAttribute="leading" secondItem="8hX-Hi-2pB" secondAttribute="leading" id="pQf-Zh-tkz"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ibq-y0-5Oj" secondAttribute="trailing" id="0mB-Vm-wgw"/>
+                                    <constraint firstItem="Ibq-y0-5Oj" firstAttribute="top" secondItem="hXk-J3-qSP" secondAttribute="bottom" constant="10" id="JD9-gk-70b"/>
+                                    <constraint firstItem="Ibq-y0-5Oj" firstAttribute="height" secondItem="gd4-rh-sD2" secondAttribute="height" constant="-30" id="N5s-tu-I21"/>
+                                    <constraint firstAttribute="trailing" secondItem="hXk-J3-qSP" secondAttribute="trailing" id="OGd-Dt-ZnG"/>
+                                    <constraint firstItem="hXk-J3-qSP" firstAttribute="top" secondItem="gd4-rh-sD2" secondAttribute="top" id="kJY-uW-9h9"/>
+                                    <constraint firstItem="Ibq-y0-5Oj" firstAttribute="leading" secondItem="gd4-rh-sD2" secondAttribute="leading" id="teR-ay-twR"/>
+                                    <constraint firstItem="hXk-J3-qSP" firstAttribute="leading" secondItem="gd4-rh-sD2" secondAttribute="leading" id="uqW-gs-PWK"/>
                                 </constraints>
-                            </scrollView>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9q-Fd-Zmq">
+                                <rect key="frame" x="20" y="40" width="30" height="22"/>
+                                <state key="normal" image="three_dot_gray_16x16"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SI1-tV-ukP">
+                                <rect key="frame" x="259" y="72" width="75" height="30"/>
+                                <state key="normal" title="2018.07.23">
+                                    <color key="titleColor" red="0.60392156862745094" green="0.60392156862745094" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveCalendar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MfG-4c-qnh"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iVy-l7-hTR" userLabel="rightBar">
+                                <rect key="frame" x="344" y="85" width="31" height="3"/>
+                                <color key="backgroundColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UI2-Rg-nz3" userLabel="leftBar">
+                                <rect key="frame" x="0.0" y="85" width="249" height="3"/>
+                                <color key="backgroundColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.9882352941176471" green="0.9882352941176471" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="e9q-Fd-Zmq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="5Ot-mT-6fd"/>
                             <constraint firstItem="e9q-Fd-Zmq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="9JF-6K-tB2"/>
-                            <constraint firstItem="4oB-5C-rx0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="241" id="Bbu-ci-5Im"/>
-                            <constraint firstAttribute="bottom" secondItem="8hX-Hi-2pB" secondAttribute="bottom" constant="20" symbolic="YES" id="I4P-jv-vue"/>
-                            <constraint firstItem="e9q-Fd-Zmq" firstAttribute="leading" secondItem="8hX-Hi-2pB" secondAttribute="leading" id="JjF-NQ-Bxn"/>
-                            <constraint firstItem="8hX-Hi-2pB" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" constant="-110" id="V6b-9M-fqG"/>
-                            <constraint firstItem="8hX-Hi-2pB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fLn-0z-1DZ"/>
-                            <constraint firstItem="8hX-Hi-2pB" firstAttribute="top" secondItem="4oB-5C-rx0" secondAttribute="bottom" constant="20" id="h9g-e7-pNM"/>
-                            <constraint firstItem="4oB-5C-rx0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="s6N-Bk-ej0"/>
+                            <constraint firstItem="iVy-l7-hTR" firstAttribute="leading" secondItem="SI1-tV-ukP" secondAttribute="trailing" constant="10" id="Chj-bC-C5w"/>
+                            <constraint firstItem="iVy-l7-hTR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Fsd-BL-2Ok"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gd4-rh-sD2" secondAttribute="trailing" id="PwH-p0-OyW"/>
+                            <constraint firstItem="gd4-rh-sD2" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:2" id="Rs7-6l-lkF"/>
+                            <constraint firstItem="UI2-Rg-nz3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="S3d-uG-U9t"/>
+                            <constraint firstItem="iVy-l7-hTR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="65" id="Yly-qP-LKz"/>
+                            <constraint firstItem="SI1-tV-ukP" firstAttribute="leading" secondItem="UI2-Rg-nz3" secondAttribute="trailing" constant="10" id="Zko-Wj-THk"/>
+                            <constraint firstItem="gd4-rh-sD2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="apG-nh-IbH"/>
+                            <constraint firstItem="gd4-rh-sD2" firstAttribute="top" secondItem="SI1-tV-ukP" secondAttribute="bottom" constant="20" id="asi-m3-9tY"/>
+                            <constraint firstItem="iVy-l7-hTR" firstAttribute="width" secondItem="UI2-Rg-nz3" secondAttribute="width" multiplier="1:8" id="baQ-Mw-xhT"/>
+                            <constraint firstItem="SI1-tV-ukP" firstAttribute="top" secondItem="e9q-Fd-Zmq" secondAttribute="bottom" constant="10" id="bjh-VG-jsN"/>
+                            <constraint firstItem="UI2-Rg-nz3" firstAttribute="bottom" secondItem="iVy-l7-hTR" secondAttribute="bottom" id="c9e-2d-CgR"/>
+                            <constraint firstItem="UI2-Rg-nz3" firstAttribute="height" secondItem="iVy-l7-hTR" secondAttribute="height" id="gWy-75-ssf"/>
+                            <constraint firstItem="iVy-l7-hTR" firstAttribute="centerY" secondItem="SI1-tV-ukP" secondAttribute="centerY" id="ntO-1y-nMz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="e9q-Fd-Zmq" secondAttribute="trailing" constant="325" id="yLV-N9-Ju4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Diary Note" id="MCh-9W-HU2">
-                        <barButtonItem key="leftBarButtonItem" title="Menu button" image="three_dot_gray_16x16" id="i2U-gC-FpQ"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="MCh-9W-HU2"/>
                     <connections>
-                        <outlet property="menuButton" destination="i2U-gC-FpQ" id="ZFh-yd-f4t"/>
+                        <outlet property="calendarView" destination="Ibq-y0-5Oj" id="OdK-RY-alb"/>
+                        <outlet property="calendarWrap" destination="gd4-rh-sD2" id="NHJ-7G-hHi"/>
+                        <outlet property="menuButton" destination="e9q-Fd-Zmq" id="uHD-vm-dKD"/>
+                        <outlet property="menuView" destination="hXk-J3-qSP" id="gpK-Hc-Gum"/>
+                        <outlet property="selectDateLabel" destination="SI1-tV-ukP" id="Nkg-s0-SLm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -92,10 +106,9 @@
         <!--Navigation Controller-->
         <scene sceneID="NJV-Ap-bdV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8ea-2T-nA3" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="8ea-2T-nA3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xUr-d1-McI">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -126,73 +139,68 @@
             </objects>
             <point key="canvasLocation" x="-1068" y="1059"/>
         </scene>
-        <!--Menu Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="JAl-Cz-vVq">
             <objects>
-                <viewController id="j0O-1h-Lfa" customClass="MenuController" sceneMemberID="viewController">
+                <viewController id="j0O-1h-Lfa" customClass="MenuViewController" customModule="DailyNote" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gkh-6c-gej">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="메뉴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTa-DX-Rvc">
-                                <rect key="frame" x="37" y="53" width="30" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="ips-YR-Pcf"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wws-Sr-rb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-124" y="1058"/>
-        </scene>
-        <!--Calendar View Controller-->
-        <scene sceneID="UzQ-kl-iIg">
-            <objects>
-                <viewController storyboardIdentifier="calendarViewController" id="Clj-Ad-5Ro" customClass="CalendarViewController" customModule="DailyNote" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ase-52-IYE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3CY-1J-H1g" customClass="CVCalendarMenuView" customModule="CVCalendar">
-                                <rect key="frame" x="0.0" y="132" width="375" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="ZFI-m4-uy6"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PNu-62-VZE" customClass="CVCalendarView" customModule="CVCalendar">
-                                <rect key="frame" x="0.0" y="172" width="375" height="300"/>
-                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="nAC-ge-YCy"/>
-                                </constraints>
-                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qd5-lA-jSa">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationLevel="5" indentationWidth="10" reuseIdentifier="cell" id="xca-rY-r8U" customClass="MenuViewCell" customModule="DailyNote">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xca-rY-r8U" id="w16-bC-HCu">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="21S-uC-Pps" userLabel="menuImage">
+                                                    <rect key="frame" x="10" y="0.0" width="50" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="nrg-wt-ekA"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="21S-uC-Pps" firstAttribute="top" secondItem="w16-bC-HCu" secondAttribute="top" id="3te-ge-YRk"/>
+                                                <constraint firstItem="21S-uC-Pps" firstAttribute="centerY" secondItem="w16-bC-HCu" secondAttribute="centerY" id="Dx3-ik-AK2"/>
+                                                <constraint firstItem="21S-uC-Pps" firstAttribute="leading" secondItem="w16-bC-HCu" secondAttribute="leading" constant="10" id="Oem-dC-QTI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="21S-uC-Pps" firstAttribute="height" secondItem="xca-rY-r8U" secondAttribute="height" id="Mb8-FJ-Fc8"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="menuImage" destination="21S-uC-Pps" id="b6s-zM-J5x"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="j0O-1h-Lfa" id="UJA-bO-eHt"/>
+                                    <outlet property="delegate" destination="j0O-1h-Lfa" id="cZn-nO-yUh"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3CY-1J-H1g" firstAttribute="top" secondItem="jgE-BQ-C9q" secondAttribute="top" constant="68" id="Luc-Tt-zT0"/>
-                            <constraint firstItem="PNu-62-VZE" firstAttribute="leading" secondItem="jgE-BQ-C9q" secondAttribute="leading" id="PhD-n6-N2y"/>
-                            <constraint firstItem="3CY-1J-H1g" firstAttribute="leading" secondItem="jgE-BQ-C9q" secondAttribute="leading" id="RSS-Sz-Kqq"/>
-                            <constraint firstItem="PNu-62-VZE" firstAttribute="top" secondItem="3CY-1J-H1g" secondAttribute="bottom" constant="10" id="dx6-jH-I3h"/>
-                            <constraint firstItem="jgE-BQ-C9q" firstAttribute="trailing" secondItem="PNu-62-VZE" secondAttribute="trailing" id="gLr-LO-XEF"/>
-                            <constraint firstItem="3CY-1J-H1g" firstAttribute="trailing" secondItem="jgE-BQ-C9q" secondAttribute="trailing" id="jZJ-Tc-1Fd"/>
-                            <constraint firstItem="3CY-1J-H1g" firstAttribute="width" secondItem="Ase-52-IYE" secondAttribute="width" id="nss-FV-nBr"/>
+                            <constraint firstItem="ips-YR-Pcf" firstAttribute="trailing" secondItem="Qd5-lA-jSa" secondAttribute="trailing" id="WTn-Ji-VHS"/>
+                            <constraint firstItem="Qd5-lA-jSa" firstAttribute="top" secondItem="ips-YR-Pcf" secondAttribute="top" id="cVJ-xe-AyT"/>
+                            <constraint firstItem="ips-YR-Pcf" firstAttribute="bottom" secondItem="Qd5-lA-jSa" secondAttribute="bottom" id="v58-hQ-5xJ"/>
+                            <constraint firstItem="Qd5-lA-jSa" firstAttribute="width" secondItem="gkh-6c-gej" secondAttribute="width" id="vIA-z8-TPh"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="jgE-BQ-C9q"/>
+                        <viewLayoutGuide key="safeArea" id="ips-YR-Pcf"/>
                     </view>
                     <connections>
-                        <outlet property="calendarView" destination="PNu-62-VZE" id="JnS-Wg-GeC"/>
-                        <outlet property="menuView" destination="3CY-1J-H1g" id="aC7-dV-3VT"/>
+                        <outlet property="tableView" destination="Qd5-lA-jSa" id="lDd-vt-lGb"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="h5s-pO-0zj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wws-Sr-rb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1213.5999999999999" y="923.38830584707648"/>
+            <point key="canvasLocation" x="-124" y="1057.4212893553224"/>
         </scene>
     </scenes>
     <resources>

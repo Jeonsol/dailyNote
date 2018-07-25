@@ -14,8 +14,9 @@
 		C837365920FD989B0064D652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C837365820FD989B0064D652 /* Assets.xcassets */; };
 		C870542D2103258000B5E8E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C837365220FD989A0064D652 /* Main.storyboard */; };
 		C870542E2103258000B5E8E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C837365A20FD989B0064D652 /* LaunchScreen.storyboard */; };
-		C8705456210388F100B5E8E4 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8705455210388F100B5E8E4 /* CalendarViewController.swift */; };
 		C8DCA10C2102E65A00FA8021 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DCA10B2102E65A00FA8021 /* SWRevealViewController.m */; };
+		C8F0CA7221044EE7005CA1DB /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F0CA7121044EE7005CA1DB /* MenuViewController.swift */; };
+		C8F0CA7421046048005CA1DB /* MenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F0CA7321046048005CA1DB /* MenuViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,10 +29,11 @@
 		C837365820FD989B0064D652 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C837365B20FD989B0064D652 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C837365D20FD989B0064D652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C8705455210388F100B5E8E4 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		C8DCA1092102E65900FA8021 /* DailyNote-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DailyNote-Bridging-Header.h"; sourceTree = "<group>"; };
 		C8DCA10A2102E65A00FA8021 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		C8DCA10B2102E65A00FA8021 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		C8F0CA7121044EE7005CA1DB /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		C8F0CA7321046048005CA1DB /* MenuViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewCell.swift; sourceTree = "<group>"; };
 		D8870E156EEDD1E387624B66 /* Pods_DailyNote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyNote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EECEBFF820A9645EE3BA77B1 /* Pods-DailyNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyNote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyNote/Pods-DailyNote.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,7 +96,8 @@
 				C837365A20FD989B0064D652 /* LaunchScreen.storyboard */,
 				C837365D20FD989B0064D652 /* Info.plist */,
 				C837365520FD989A0064D652 /* DailyNote.xcdatamodeld */,
-				C8705455210388F100B5E8E4 /* CalendarViewController.swift */,
+				C8F0CA7121044EE7005CA1DB /* MenuViewController.swift */,
+				C8F0CA7321046048005CA1DB /* MenuViewCell.swift */,
 			);
 			path = DailyNote;
 			sourceTree = "<group>";
@@ -222,7 +225,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8705456210388F100B5E8E4 /* CalendarViewController.swift in Sources */,
+				C8F0CA7221044EE7005CA1DB /* MenuViewController.swift in Sources */,
+				C8F0CA7421046048005CA1DB /* MenuViewCell.swift in Sources */,
 				C837365720FD989A0064D652 /* DailyNote.xcdatamodeld in Sources */,
 				C837365120FD989A0064D652 /* ViewController.swift in Sources */,
 				C837364F20FD989A0064D652 /* AppDelegate.swift in Sources */,
