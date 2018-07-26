@@ -11,16 +11,18 @@ import CVCalendar
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var contentScrollView: UIScrollView!
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var selectDateLabel: UIButton!
     @IBOutlet weak var calendarWrap: UIView!
     @IBOutlet weak var menuView: CVCalendarMenuView!
     @IBOutlet weak var calendarView: CVCalendarView!
-    @IBOutlet weak var scrollView: UIScrollView!
     
     private var shouldShowDaysOut = true
     private var calendarToggle = true
     private var calendarOriginPositionY : CGFloat?
+    private var contentOriginPositionY : CGFloat?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +45,7 @@ class ViewController: UIViewController {
         shouldShowDaysOut = true
         selectDateLabel.setTitle(calendarView.presentedDate.commonDescription, for: .normal)
         calendarOriginPositionY = self.calendarWrap.frame.origin.y
+        contentOriginPositionY = self.contentScrollView.frame.origin.y
     }
     
     override func viewDidLayoutSubviews() {
@@ -52,18 +55,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func moveCalendar(_ sender: UIButton) {
+
         if calendarToggle {
             UIView.animate(withDuration: 1) {
                 self.calendarWrap.frame.origin.y = -(self.calendarWrap.frame.height)
+                self.contentScrollView.frame.origin.y = 80
             }
         }
         else {
             UIView.animate(withDuration: 1) {
                 self.calendarWrap.frame.origin.y = self.calendarOriginPositionY!
+                self.contentScrollView.frame.origin.y = self.contentOriginPositionY!
             }
         }
         self.calendarToggle = !calendarToggle
-        scrollView.isScrollEnabled = !calendarToggle
+        self.scrollView.isScrollEnabled = calendarToggle
+        self.contentScrollView.isScrollEnabled = !calendarToggle
     }
     
 }
@@ -92,6 +99,14 @@ extension ViewController: CVCalendarViewAppearanceDelegate {
             return UIColor.gray
         default:
             return nil
+        }
+    }
+}
+
+extension ViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.x > 0 || scrollView.contentOffset.x < 0{
+            scrollView.contentOffset.x = 0
         }
     }
 }
