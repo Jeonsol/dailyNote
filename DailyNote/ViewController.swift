@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentScrollView: UIScrollView!
+    @IBOutlet weak var wrapperView: UIView!
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var selectDateLabel: UIButton!
     @IBOutlet weak var calendarWrap: UIView!
@@ -26,7 +28,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if self.revealViewController() != nil {
             menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
@@ -57,6 +58,7 @@ class ViewController: UIViewController {
     @IBAction func moveCalendar(_ sender: UIButton) {
 
         if calendarToggle {
+            contentScrollView.frame.size.height =  UIScreen.main.bounds.size.height
             UIView.animate(withDuration: 1) {
                 self.calendarWrap.frame.origin.y = -(self.calendarWrap.frame.height)
                 self.contentScrollView.frame.origin.y = 80

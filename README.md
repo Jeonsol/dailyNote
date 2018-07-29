@@ -11,3 +11,4 @@ CVCalendar : https://github.com/CVCalendar/CVCalendar
 
 # ScrollView
 scrollview안에 uiview 가 있어야됨. 
+scrollview안의 uiview를 콘텐츠 높이만큼 갖으려면 최 하위 콘텐츠에서 각각 높이를 갖아야 됨.
