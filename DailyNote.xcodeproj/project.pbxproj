@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		7114D1B8C64AE19C82B3BD99 /* Pods_DailyNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8870E156EEDD1E387624B66 /* Pods_DailyNote.framework */; };
+		C8049DB321146F0B001F0BD1 /* DiaryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8049DB221146F0B001F0BD1 /* DiaryStore.swift */; };
+		C8049DB521147635001F0BD1 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8049DB421147635001F0BD1 /* Global.swift */; };
 		C837364F20FD989A0064D652 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C837364E20FD989A0064D652 /* AppDelegate.swift */; };
 		C837365120FD989A0064D652 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C837365020FD989A0064D652 /* ViewController.swift */; };
 		C837365720FD989A0064D652 /* DailyNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C837365520FD989A0064D652 /* DailyNote.xcdatamodeld */; };
 		C852858E210F2331001AADB7 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C852858D210F2331001AADB7 /* WriteViewController.swift */; };
 		C8542CBE21105F52006178ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8542CBD21105F52006178ED /* Main.storyboard */; };
 		C870542E2103258000B5E8E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C837365A20FD989B0064D652 /* LaunchScreen.storyboard */; };
-		C89E1FAB210F3D5A001CD49D /* tempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89E1FAA210F3D5A001CD49D /* tempViewController.swift */; };
 		C89E1FAD211057B3001CD49D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C89E1FAC211057B3001CD49D /* Assets.xcassets */; };
 		C8DCA10C2102E65A00FA8021 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DCA10B2102E65A00FA8021 /* SWRevealViewController.m */; };
 		C8F0CA7221044EE7005CA1DB /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F0CA7121044EE7005CA1DB /* MenuViewController.swift */; };
@@ -23,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		96E07F1A436DCFE50A2E17AA /* Pods-DailyNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyNote.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyNote/Pods-DailyNote.release.xcconfig"; sourceTree = "<group>"; };
+		C8049DB221146F0B001F0BD1 /* DiaryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryStore.swift; sourceTree = "<group>"; };
+		C8049DB421147635001F0BD1 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		C837364B20FD989A0064D652 /* DailyNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C837364E20FD989A0064D652 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C837365020FD989A0064D652 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,7 +34,6 @@
 		C837365D20FD989B0064D652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C852858D210F2331001AADB7 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		C8542CBD21105F52006178ED /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		C89E1FAA210F3D5A001CD49D /* tempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempViewController.swift; sourceTree = "<group>"; };
 		C89E1FAC211057B3001CD49D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8DCA1092102E65900FA8021 /* DailyNote-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DailyNote-Bridging-Header.h"; sourceTree = "<group>"; };
 		C8DCA10A2102E65A00FA8021 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -97,13 +99,14 @@
 				C8DCA1082102E63500FA8021 /* SWRevealViewController */,
 				C837364E20FD989A0064D652 /* AppDelegate.swift */,
 				C837365020FD989A0064D652 /* ViewController.swift */,
-				C89E1FAA210F3D5A001CD49D /* tempViewController.swift */,
 				C837365A20FD989B0064D652 /* LaunchScreen.storyboard */,
 				C837365D20FD989B0064D652 /* Info.plist */,
 				C837365520FD989A0064D652 /* DailyNote.xcdatamodeld */,
 				C8F0CA7121044EE7005CA1DB /* MenuViewController.swift */,
 				C8F0CA7321046048005CA1DB /* MenuViewCell.swift */,
 				C852858D210F2331001AADB7 /* WriteViewController.swift */,
+				C8049DB221146F0B001F0BD1 /* DiaryStore.swift */,
+				C8049DB421147635001F0BD1 /* Global.swift */,
 			);
 			path = DailyNote;
 			sourceTree = "<group>";
@@ -231,7 +234,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C89E1FAB210F3D5A001CD49D /* tempViewController.swift in Sources */,
 				C8F0CA7221044EE7005CA1DB /* MenuViewController.swift in Sources */,
 				C8F0CA7421046048005CA1DB /* MenuViewCell.swift in Sources */,
 				C837365720FD989A0064D652 /* DailyNote.xcdatamodeld in Sources */,
@@ -239,6 +241,8 @@
 				C837364F20FD989A0064D652 /* AppDelegate.swift in Sources */,
 				C8DCA10C2102E65A00FA8021 /* SWRevealViewController.m in Sources */,
 				C852858E210F2331001AADB7 /* WriteViewController.swift in Sources */,
+				C8049DB521147635001F0BD1 /* Global.swift in Sources */,
+				C8049DB321146F0B001F0BD1 /* DiaryStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

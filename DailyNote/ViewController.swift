@@ -13,21 +13,25 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentScrollView: UIScrollView!
-    @IBOutlet weak var wrapperView: UIView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var selectDateLabel: UIButton!
     @IBOutlet weak var calendarWrap: UIView!
     @IBOutlet weak var menuView: CVCalendarMenuView!
     @IBOutlet weak var calendarView: CVCalendarView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var textView: UILabel!
     
     private var shouldShowDaysOut = true
     private var calendarToggle = true
     private var calendarOriginPositionY : CGFloat?
     private var contentOriginPositionY : CGFloat?
+    private var selectedDate : String?
+    private var diaries : Dictionary<String,Any> = Global.shared.diaryStore.diaries
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         if self.revealViewController() != nil {
             menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
@@ -47,6 +51,10 @@ class ViewController: UIViewController {
         selectDateLabel.setTitle(calendarView.presentedDate.commonDescription, for: .normal)
         calendarOriginPositionY = self.calendarWrap.frame.origin.y
         contentOriginPositionY = self.contentScrollView.frame.origin.y
+        
+        let contentScrollTouch = UITapGestureRecognizer(target: self, action: #selector(goWriteViewControll))
+        self.contentScrollView.addGestureRecognizer(contentScrollTouch)
+        loadData()
     }
     
     override func viewDidLayoutSubviews() {
@@ -54,7 +62,15 @@ class ViewController: UIViewController {
         calendarView.commitCalendarViewUpdate()
         menuView.commitMenuViewUpdate()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
     @IBAction func moveCalendar(_ sender: UIButton) {
 
         if calendarToggle {
@@ -75,6 +91,22 @@ class ViewController: UIViewController {
         self.contentScrollView.isScrollEnabled = !calendarToggle
     }
     
+    @objc private func goWriteViewControll() {
+        let writeView = storyboard?.instantiateViewController(withIdentifier: "writeViewController") as? WriteViewController
+        writeView?.today = selectedDate
+        self.show(writeView!, sender: self)
+    }
+    
+    private func loadData() {
+        let selectedData = diaries[selectedDate!]
+        if let imageData = (selectedData as AnyObject)["image"] {
+            imageView.image = UIImage(data: imageData as! Data)
+        }
+        if let content = (selectedData as AnyObject)["content"] {
+            textView.text = content as? String
+        }
+    }
+    
 }
 
 extension ViewController: CVCalendarMenuViewDelegate, CVCalendarViewDelegate  {
@@ -90,8 +122,9 @@ extension ViewController: CVCalendarMenuViewDelegate, CVCalendarViewDelegate  {
     
     func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
         selectDateLabel.setTitle(dayView.date.commonDescription, for: .normal)
+        selectedDate = dayView.date.commonDescription
+        loadData()
     }
-    
 }
 
 extension ViewController: CVCalendarViewAppearanceDelegate {
