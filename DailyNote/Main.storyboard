@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gd4-rh-sD2" userLabel="Calendar">
-                                        <rect key="frame" x="0.0" y="80" width="374" height="261.5"/>
+                                        <rect key="frame" x="0.0" y="80" width="374" height="270"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXk-J3-qSP" customClass="CVCalendarMenuView" customModule="CVCalendar">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -31,7 +31,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ibq-y0-5Oj" customClass="CVCalendarView" customModule="CVCalendar">
-                                                <rect key="frame" x="0.0" y="40" width="374" height="231.5"/>
+                                                <rect key="frame" x="0.0" y="40" width="374" height="240"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="240" id="hFP-hS-FhW"/>
+                                                </constraints>
                                             </view>
                                         </subviews>
                                         <constraints>
@@ -93,7 +96,7 @@
                                         </constraints>
                                     </view>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOm-mb-VTl">
-                                        <rect key="frame" x="0.0" y="351.5" width="374" height="371"/>
+                                        <rect key="frame" x="0.0" y="360" width="374" height="371"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i31-3s-srA">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="371"/>
@@ -142,7 +145,6 @@
                                     <constraint firstItem="fOm-mb-VTl" firstAttribute="leading" secondItem="Ibq-y0-5Oj" secondAttribute="leading" id="2gw-QV-QTc"/>
                                     <constraint firstAttribute="trailing" secondItem="80o-tr-Yme" secondAttribute="trailing" id="7uY-Bs-xYX"/>
                                     <constraint firstAttribute="trailing" secondItem="gd4-rh-sD2" secondAttribute="trailing" constant="1" id="IKp-LQ-rcM"/>
-                                    <constraint firstItem="gd4-rh-sD2" firstAttribute="height" secondItem="J4k-1I-M6E" secondAttribute="height" multiplier="1:2" constant="-40" id="JNF-Kx-dE7"/>
                                     <constraint firstItem="gd4-rh-sD2" firstAttribute="leading" secondItem="J4k-1I-M6E" secondAttribute="leading" id="Q64-d9-ii7"/>
                                     <constraint firstAttribute="bottom" secondItem="fOm-mb-VTl" secondAttribute="bottom" id="QwJ-sM-lc6"/>
                                     <constraint firstItem="fOm-mb-VTl" firstAttribute="trailing" secondItem="Ibq-y0-5Oj" secondAttribute="trailing" id="Rbg-kB-Uht"/>
