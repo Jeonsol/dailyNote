@@ -19,19 +19,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var calendarWrap: UIView!
     @IBOutlet weak var menuView: CVCalendarMenuView!
     @IBOutlet weak var calendarView: CVCalendarView!
-    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UILabel!
+    @IBOutlet weak var contentStackView: UIStackView!
+    @IBOutlet weak var imageView: UIImageView!
     
     private var shouldShowDaysOut = true
     private var calendarToggle = true
     private var calendarOriginPositionY : CGFloat?
     private var contentOriginPositionY : CGFloat?
     private var selectedDate : String?
+    private var selectedData : AnyObject?
     private var diaries : Dictionary<String,Any> = Global.shared.diaryStore.diaries
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         if self.revealViewController() != nil {
             menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
@@ -54,7 +55,6 @@ class ViewController: UIViewController {
         
         let contentScrollTouch = UITapGestureRecognizer(target: self, action: #selector(goWriteViewControll))
         self.contentScrollView.addGestureRecognizer(contentScrollTouch)
-        loadData()
     }
     
     override func viewDidLayoutSubviews() {
@@ -94,16 +94,29 @@ class ViewController: UIViewController {
     @objc private func goWriteViewControll() {
         let writeView = storyboard?.instantiateViewController(withIdentifier: "writeViewController") as? WriteViewController
         writeView?.today = selectedDate
+        if let selectedDiary = selectedData {
+            writeView?.modifyData = selectedDiary as AnyObject
+        }
         self.show(writeView!, sender: self)
     }
     
     private func loadData() {
-        let selectedData = diaries[selectedDate!]
-        if let imageData = (selectedData as AnyObject)["image"] {
-            imageView.image = UIImage(data: imageData as! Data)
-        }
-        if let content = (selectedData as AnyObject)["content"] {
-            textView.text = content as? String
+        imageView.isHidden = true
+        if let selectedDiaries = diaries[selectedDate!] {
+            selectedData = selectedDiaries as AnyObject
+            if let imageData = (selectedData as AnyObject)["image"] {
+                if ((imageData as? NSData) != nil) {
+                    imageView.isHidden = false
+                    imageView.image = UIImage(data: imageData as! Data)!
+                }
+            }
+            if let content = (selectedData as AnyObject)["content"] {
+                textView.text = content as? String
+            }
+            
+        } else {
+            selectedData = nil
+            textView?.text = "작성된 글이 없습니다."
         }
     }
     

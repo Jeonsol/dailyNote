@@ -25,7 +25,8 @@ class WriteViewController: UIViewController {
     var keyboardToggle: Bool = false
     var today : String?
     var currentTime: String?
-    var diaryStore:DiaryStore = Global.shared.diaryStore
+    var modifyData : AnyObject?
+    var diaryStore : DiaryStore = Global.shared.diaryStore
     private var textValue: String {
         get {
             return textView.text
@@ -44,13 +45,24 @@ class WriteViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let keyboardStatus = UITapGestureRecognizer(target: self, action: #selector(exposureKeyboard))
         self.textView.addGestureRecognizer(keyboardStatus)
+        
         todayLabel.text = today
         
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
         
+        if let diaries = modifyData {
+            if let content = (diaries as AnyObject)["content"] {
+                textView.text = content as? String
+            }
+            if let imageData = (diaries as AnyObject)["image"] {
+                imageContainer = UIImage(data: imageData as! Data)
+                thumbnail.setImage(imageContainer, for: UIControlState.normal)
+            }
+        }
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -93,8 +105,10 @@ class WriteViewController: UIViewController {
     }
     @IBAction func addDiary(_ sender: UIButton) {
         guard let content = textView.text else {return}
-        guard let image = imageContainer else {return}
-        guard let imageData = UIImagePNGRepresentation(image) else { return }
+        var imageData: Data? = nil
+        if let image = imageContainer {
+            imageData = UIImagePNGRepresentation(image)
+        }
         let dataContainer : Dictionary<String,Any> = [self.today! : ["content": content, "image": imageData]]
         diaryStore.addDiary(dataContainer)
         let mainView = storyboard?.instantiateViewController(withIdentifier: "viewController") as? ViewController
