@@ -59,8 +59,10 @@ class WriteViewController: UIViewController {
                 textView.text = content as? String
             }
             if let imageData = (diaries as AnyObject)["image"] {
-                imageContainer = UIImage(data: imageData as! Data)
-                thumbnail.setImage(imageContainer, for: UIControlState.normal)
+                if ((imageData as? NSData) != nil) {
+                    imageContainer = UIImage(data: imageData as! Data)
+                    thumbnail.setImage(imageContainer, for: UIControlState.normal)
+                }
             }
         }
     }
@@ -101,7 +103,22 @@ class WriteViewController: UIViewController {
         textValue = self.currentTime!
     }
     @IBAction func getPhoto(_ sender: UIButton) {
-        present(imagePicker, animated: true, completion: nil)
+        if let diaries = modifyData {
+            if ((diaries["image"] as? NSData) != nil) {
+                let photoAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+                photoAlert.addAction(UIAlertAction(title: "사진수정", style: .default, handler: { result in self.present(self.imagePicker, animated: true, completion: nil)}))
+                photoAlert.addAction(UIAlertAction(title: "사진삭제", style: .default, handler: { result in
+                    self.imageContainer = nil
+                    self.thumbnail.setImage(UIImage(named: "icon_camera_24x24_gray"), for: UIControlState.normal)}))
+                photoAlert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+                self.present(photoAlert, animated: true, completion: nil)
+                
+            } else {
+                present(imagePicker, animated: true, completion: nil)
+            }
+        } else {
+            present(imagePicker, animated: true, completion: nil)
+        }
     }
     @IBAction func addDiary(_ sender: UIButton) {
         guard let content = textView.text else {return}
@@ -109,8 +126,12 @@ class WriteViewController: UIViewController {
         if let image = imageContainer {
             imageData = UIImagePNGRepresentation(image)
         }
-        let dataContainer : Dictionary<String,Any> = [self.today! : ["content": content, "image": imageData]]
-        diaryStore.addDiary(dataContainer)
+        if (content.isEmpty) && (imageData == nil) {
+            diaryStore.diaries.removeValue(forKey: self.today!)
+        } else {
+            let dataContainer : Dictionary<String,Any> = [self.today! : ["content": content, "image": imageData]]
+            diaryStore.addDiary(dataContainer)
+        }
         let mainView = storyboard?.instantiateViewController(withIdentifier: "viewController") as? ViewController
         self.show(mainView!, sender: self)
     }
